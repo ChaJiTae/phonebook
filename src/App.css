@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Cafe24Ssurround";
+  src: url("./font/Cafe24Ssurround-v2.0.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.phoneBookTitle {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Cafe24Ssurround";
+}
