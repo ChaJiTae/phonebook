@@ -17,10 +17,13 @@ function ContactList() {
   }, [keyword, contactList]);
 
   return (
-    <div>
-      <SearchBox />
-      <div className="contact-list">
-        num:{filteredList.length}
+    <div className="contactListSet">
+      <div className="searchBox">
+        <div className="searchBoxTitle">이름으로 검색</div>
+        <SearchBox />
+      </div>
+      <div className="contactList">
+        <div>연락처 수 : {filteredList.length}</div>
         {filteredList.map((item, index) => (
           <ContactItem item={item} key={index} />
         ))}

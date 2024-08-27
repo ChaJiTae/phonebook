@@ -13,7 +13,7 @@ function SearchBox() {
     dispatch({ type: "SEARCH_BY_USERNAME", payload: { keyword } });
   };
   return (
-    <Form onSubmit={searchByName} className="search-form">
+    <Form onSubmit={searchByName} className="searchForm">
       <Row>
         <Col>
           <Form.Control

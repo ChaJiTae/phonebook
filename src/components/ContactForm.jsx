@@ -17,9 +17,9 @@ function BasicExample() {
   };
 
   return (
-    <Form onSubmit={addContact}>
+    <Form className="formSet" onSubmit={addContact}>
       <Form.Group className="formName" controlId="formName">
-        <Form.Label>이름</Form.Label>
+        <Form.Label className="formNameLabel">이름</Form.Label>
         <Form.Control
           type="text"
           placeholder="이름을 입력해주세요"
@@ -28,14 +28,15 @@ function BasicExample() {
       </Form.Group>
 
       <Form.Group className="formContact" controlId="formContact">
-        <Form.Label>전화번호</Form.Label>
+        <Form.Label className="formContactNumber">전화번호</Form.Label>
         <Form.Control
           type="number"
           placeholder="전화번호를 입력해주세요"
           onChange={(event) => setPhoneNumber(event.target.value)}
+          className="formContactNumberInput"
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button className="submitButton" variant="primary" type="submit">
         추가
       </Button>
     </Form>
