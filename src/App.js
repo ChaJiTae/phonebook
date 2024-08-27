@@ -6,9 +6,9 @@ import ContactList from "./components/ContactList";
 
 function App() {
   return (
-    <div>
+    <div className="mainScreen">
       <div className="phoneBookTitle">연락처</div>
-      <Container>
+      <Container className="container">
         <Row>
           <Col>
             <ContactForm />

@@ -59,3 +59,16 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.container {
+}
+
+.mainScreen {
+  background-color: rgb(122, 208, 122);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 80vw;
+  height: 90vh;
+}
