@@ -1,21 +1,32 @@
-import React from "react";
-import { Col, Row } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
+import React, { useState } from "react";
+import { Form, Button, Col, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function SearchBox() {
+  let [keyword, setKeyword] = useState("");
+  let dispatch = useDispatch();
+  let { contact } = useSelector((state) => state);
+  const searchByName = (event) => {
+    event.preventDefault();
+    dispatch({ type: "SEARCH_BY_USERNAME", payload: { keyword } });
+  };
   return (
-    <Row>
-      <Col lg={10}>
-        <Form.Control type="text" placeholder="이름을 입력해주세요" />
-      </Col>
-      <Col lg={2}>
-        <Button variant="primary" type="submit">
-          찾기
-        </Button>
-      </Col>
-    </Row>
+    <Form onSubmit={searchByName} className="search-form">
+      <Row>
+        <Col>
+          <Form.Control
+            type="text"
+            placeholder="name"
+            onChange={(event) => setKeyword(event.target.value)}
+          />
+        </Col>
+        <Col>
+          <Button type="submit">Search</Button>
+        </Col>
+      </Row>
+    </Form>
   );
 }
 
